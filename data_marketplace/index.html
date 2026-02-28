@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monad Data Market Place</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <header class="navbar">
+        <div class="container flex-row">
+            <div class="brand">
+                <div class="brand-logo">M</div>
+                <h1>Monad Data Market Place</h1>
+            </div>
+            <div class="nav-stats">
+                <span id="marketStatus">● Market Live</span>
+                <span id="monBalance">0.00 MON</span>
+                <span id="userAddressDisplay" class="address-chip">Connecting...</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>Premium IoT Data Feeds</h2>
+            <p>Access high-integrity sensor data from trusted providers on the Monad Blockchain.</p>
+        </section>
+
+        <!-- Search & Filter -->
+        <div class="market-controls glass">
+            <input type="text" placeholder="Search data providers..." class="search-input">
+            <div class="filters">
+                <span class="filter-chip active">All</span>
+                <span class="filter-chip">Temperature</span>
+                <span class="filter-chip">Humidity</span>
+                <span class="filter-chip">Environment</span>
+            </div>
+        </div>
+
+        <!-- Marketplace Grid -->
+        <div id="providerGrid" class="market-grid">
+            <!-- Providers will be injected here -->
+        </div>
+    </main>
+
+    <!-- Request Modal (Hidden) -->
+    <div id="requestModal" class="modal-overlay hidden">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h2 id="modalTitle">Request Data Feed</h2>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="provider-info-mini">
+                    <p>Company: <strong id="modalCompanyName">...</strong></p>
+                    <p>Network: <strong>Monad Testnet</strong></p>
+                </div>
+
+                <div class="form-group">
+                    <label>Select Data Stream</label>
+                    <select id="dataTypeDropdown" class="form-input">
+                        <option value="temperature">🌡️ Temperature Data</option>
+                        <option value="humidity">💧 Humidity Data</option>
+                        <option value="both">⚡ Full Environmental Stream</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Payment Mode</label>
+                    <p class="payment-info">Stream Price: <strong>0.001 MON / request</strong></p>
+                    <div class="payment-badges">
+                        <span class="pay-badge active">Monad (MON)</span>
+                        <span class="pay-badge">USDC</span>
+                    </div>
+                </div>
+
+                <button id="confirmRequestBtn" class="btn-purchase">Purchase Access</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Display Section (Bottom) -->
+    <div id="purchasedDataSection" class="data-reveal hidden">
+        <div class="container glass">
+            <h3>Access Granted: Live Data Stream</h3>
+            <div class="data-card-grid">
+                <div class="data-card">
+                    <label>Value</label>
+                    <div id="displayValue" class="value-large">--</div>
+                </div>
+                <div class="data-card">
+                    <label>Publisher</label>
+                    <div id="displayPublisher" class="value-small truncate">--</div>
+                </div>
+                <div class="data-card">
+                    <label>IPFS CID</label>
+                    <div id="displayCid" class="value-small truncate">--</div>
+                </div>
+                <div class="data-card">
+                    <label>Data Hash</label>
+                    <div id="displayHash" class="value-small truncate">--</div>
+                </div>
+                <div class="data-card">
+                    <label>Payment Mode</label>
+                    <div id="displayPayment" class="value-small">--</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.11.1/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

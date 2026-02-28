@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monad IoT Vendor Dashboard</title>
+    <!-- Modern Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="glow-bg"></div>
+
+    <div class="container">
+        <!-- Header Section -->
+        <header class="glass-panel header">
+            <div class="logo">
+                <div class="logo-icon"></div>
+                <h1>Monad IoT Registry</h1>
+            </div>
+            <button id="connectWalletBtn" class="btn-primary">Connect Web3 Wallet</button>
+        </header>
+
+        <main>
+            <!-- Control Panel -->
+            <section class="glass-panel control-panel">
+                <div class="panel-header">
+                    <h2>Registry Configuration</h2>
+                    <span id="bridgeStatusBadge" class="badge badge-error">Registry Offline</span>
+                </div>
+                <div class="control-actions">
+                    <p class="control-desc">Start the backend bridge to automatically register Pinata data on Monad.</p>
+                    <button id="startBridgeBtn" class="btn-secondary">Start Registry Bridge</button>
+                </div>
+            </section>
+
+            <!-- Stats Panel -->
+            <section class="glass-panel stats-panel">
+                <div class="stat-card">
+                    <h3>Wallet Address</h3>
+                    <p id="walletAddressDisplay" class="truncate">Not Connected</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Monad Balance</h3>
+                    <p id="monadBalanceDisplay">0.00 MON</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Records</h3>
+                    <p id="totalRecordsDisplay">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Network Status</h3>
+                    <p id="networkStatusDisplay" class="status-indicator">● Disconnected</p>
+                </div>
+            </section>
+
+            <!-- Data Feed Section -->
+            <section class="glass-panel data-panel">
+                <div class="panel-header">
+                    <h2>Live IoT Data Feed</h2>
+                    <div class="pulse-indicator"></div>
+                </div>
+                <div class="table-container">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Timestamp</th>
+                                <th>Temperature</th>
+                                <th>Humidity</th>
+                                <th>Publisher</th>
+                                <th>IPFS CID</th>
+                                <th>Data Hash</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                            <!-- Data rows will be injected here by app.js -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Ethers.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.11.1/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

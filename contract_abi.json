@@ -1,0 +1,104 @@
+[
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": false,
+                "internalType": "string",
+                "name": "cid",
+                "type": "string"
+            },
+            {
+                "indexed": false,
+                "internalType": "bytes32",
+                "name": "dataHash",
+                "type": "bytes32"
+            },
+            {
+                "indexed": false,
+                "internalType": "address",
+                "name": "publisher",
+                "type": "address"
+            },
+            {
+                "indexed": false,
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "name": "DataRegistered",
+        "type": "event"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "cid",
+                "type": "string"
+            }
+        ],
+        "name": "getHash",
+        "outputs": [
+            {
+                "internalType": "bytes32",
+                "name": "",
+                "type": "bytes32"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "",
+                "type": "string"
+            }
+        ],
+        "name": "records",
+        "outputs": [
+            {
+                "internalType": "string",
+                "name": "cid",
+                "type": "string"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "dataHash",
+                "type": "bytes32"
+            },
+            {
+                "internalType": "address",
+                "name": "publisher",
+                "type": "address"
+            },
+            {
+                "internalType": "uint256",
+                "name": "timestamp",
+                "type": "uint256"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "cid",
+                "type": "string"
+            },
+            {
+                "internalType": "bytes32",
+                "name": "dataHash",
+                "type": "bytes32"
+            }
+        ],
+        "name": "registerData",
+        "outputs": [],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]
